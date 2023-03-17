@@ -17,3 +17,18 @@ export const create = async (data) => {
     console.log(result);
     return result
 }
+
+export const getOne = async (gameId) => {
+
+
+    const result = await request.get(`${baseUrl}/${gameId}`)
+    return result
+}
+
+
+export const addComments = async (gameId, data) => {
+    const result = await request.post(`${baseUrl}/${gameId}/comments`, data)
+
+    return result
+
+}

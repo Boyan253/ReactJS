@@ -6,13 +6,11 @@ export const request = async (method, url, data) => {
         if (data) {
             options.headers = {
                 "content-type": "application/json"
-            }
+            };
             options.body = JSON.stringify(data)
         }
     }
-    const response = await fetch(url, {
-        method
-    })
+    const response = await fetch(url, options)
     try {
         const result = await response.json()
         return result
